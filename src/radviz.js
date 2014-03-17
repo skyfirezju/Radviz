@@ -12,11 +12,11 @@
 			startColor : {},//起始颜色
 			endColor : {},//终止颜色
 			canvas : {},//画布
-			x0 : 110,//圆心坐标x
-			y0 : 100,//圆心坐标y
-			r : 90,//半径
-			width : 300,//画布宽度
-			height : 200//画布高度
+			x0 : 90,//圆心坐标x
+			y0 : 90,//圆心坐标y
+			r : 70,//半径
+			width : 180,//画布宽度
+			height : 180//画布高度
 		};
 		this.get = function(key) {
 			return _[key];
@@ -76,7 +76,7 @@
 			canvas.height = "200";
 			var id = me.get("renderTo");
 			var element = document.getElementById(id);
-			var width = element.offsetWidth - 28;
+			var width = element.offsetWidth;
 			var height = element.offsetHeight;
 			me.set("width", width);
 			me.set("height", height);
@@ -130,8 +130,7 @@
 				ctx.fill();
 				//绘制维度文字
 				ctx.fillStyle = "black";
-				ctx.font = "2px sans-serif";
-				
+				ctx.font = "normal 10px 微软雅黑";
 				if(x < x0 && y < y0) {
 					var maxx = Math.max(x - 1 -ctx.measureText(keyList[i]).width/2, 0.5 );
 					ctx.fillText(keyList[i], maxx, y - 1);
